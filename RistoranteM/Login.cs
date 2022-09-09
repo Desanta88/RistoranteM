@@ -11,7 +11,7 @@ using System.IO;
 
 namespace RistoranteM
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         public static string PasswordP;
         public static string PasswordC;
@@ -22,7 +22,7 @@ namespace RistoranteM
         string FILENAME = @"./passwordUtenti.txt";
         string FILEname = @"./passwordProprietario.txt";
         FormP RegProp;
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             //ogni volta che si apre il programma legge le informazioni contenuti nei file e li mette in variabili apposite

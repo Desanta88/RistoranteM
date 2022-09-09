@@ -56,15 +56,19 @@ namespace RistoranteM
         }
         //aggiunge password nel file
         public void AggiuntaC(string[] c,ref int i,ref int counter)
-        {  
-            if (TextBoxRegC.Text != "" && i<c.Length && counter<1)
+        {
+            if (TextBoxRegC.Text.Length <= 12)
             {
-                c[i] = TextBoxRegC.Text;
-                TextBoxRegC.Text = "";
-                Form1.Clientela[i] = Clienti[i];
-                i++;
+                if (TextBoxRegC.Text != "" && i < c.Length && counter < 1)
+                {
+                    c[i] = TextBoxRegC.Text;
+                    TextBoxRegC.Text = "";
+                    Login.Clientela[i] = Clienti[i];
+                    i++;
+                }
+                counter++;
             }
-            counter++;
+            
         }
         //ogni volta che si apre il form3,le informazioni contenenti nei file verranno messe in variabili apposite
         public RegCliente()
@@ -94,8 +98,8 @@ namespace RistoranteM
             AggiuntaC(Clienti, ref n,ref count);
             scrivi(filename, n.ToString());
             aggiuntaNelFile(Clienti, percorso, n);
-            Form1.nc = n;
-            Form1.Clientela = Clienti;
+            Login.nc = n;
+            Login.Clientela = Clienti;
         }
         //ogni volta che viene premuto questo bottone,si uscirà dal form3
         private void IndietroC_Click(object sender, EventArgs e)

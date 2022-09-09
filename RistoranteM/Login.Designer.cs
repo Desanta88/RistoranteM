@@ -1,7 +1,7 @@
 ﻿
 namespace RistoranteM
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variabile di progettazione necessaria.

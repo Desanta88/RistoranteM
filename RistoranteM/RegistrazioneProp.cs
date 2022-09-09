@@ -30,14 +30,14 @@ namespace RistoranteM
             InitializeComponent();
       
         }
-        //mette la password all'interno di una variabile per un controllo nella pagina del login,se count è minore di 1
+        //mette la password all'interno di una variabile per un controllo nella pagina del login,se count è minore di 1 e se la lunghezza della password è minore o uguale a 16
         private void RegPassP_Click(object sender, EventArgs e)
         {
-            if (count < 1)
+            if (count < 1 && TextBoxRegP.Text.Length<=12)
             {
                 PasswordP = TextBoxRegP.Text;
                 TextBoxRegP.Text = "";
-                Form1.PasswordP = PasswordP;
+                Login.PasswordP = PasswordP;
                 scrivi(filename, PasswordP);
                 count++;
             }
