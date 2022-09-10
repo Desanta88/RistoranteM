@@ -19,21 +19,6 @@ namespace RistoranteM
         {
             InitializeComponent();
         }
-        public static void ScriviAppend(string content, string filename)
-        {
-            var oStream = new FileStream(filename, FileMode.Append, FileAccess.Write, FileShare.Read);
-            StreamWriter sw = new StreamWriter(oStream);
-            sw.WriteLine(content);
-            sw.Close();
-        }
-        public string ToString(piatto pi, string sep = ";"/*se non passo sep il punto e virgola sarà il valore di default*/)
-        {
-            return pi.tipo + sep + pi.nome + sep + pi.prezzo + sep + pi.ingrediente1 + sep + pi.ingrediente2 + sep + pi.ingrediente3 + sep + pi.ingrediente4;
-        }
-        public void AggiungiSulFile(piatto pi, string filename)
-        {
-            ScriviAppend(ToString(pi), filename);
-        }
         public static piatto FromString(string piattoStringa, string sep = ";")
         {
             piatto v;

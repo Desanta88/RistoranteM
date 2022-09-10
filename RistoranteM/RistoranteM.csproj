@@ -58,11 +58,23 @@
     <Compile Include="CercaPiatto.Designer.cs">
       <DependentUpon>CercaPiatto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conto.Designer.cs">
+      <DependentUpon>Conto.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminaPiatto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EliminaPiatto.Designer.cs">
       <DependentUpon>EliminaPiatto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuidaPerOrdinarePiatti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuidaPerOrdinarePiatti.Designer.cs">
+      <DependentUpon>GuidaPerOrdinarePiatti.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -120,8 +132,14 @@
     <EmbeddedResource Include="CercaPiatto.resx">
       <DependentUpon>CercaPiatto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Conto.resx">
+      <DependentUpon>Conto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EliminaPiatto.resx">
       <DependentUpon>EliminaPiatto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuidaPerOrdinarePiatti.resx">
+      <DependentUpon>GuidaPerOrdinarePiatti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

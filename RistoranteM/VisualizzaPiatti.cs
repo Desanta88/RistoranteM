@@ -12,11 +12,11 @@ namespace RistoranteM
 {
     public partial class VisualizzaPiatti : Form
     {
-        public piatto[] Antipasti = new piatto[100];
-        public piatto[] Primi = new piatto[100];
-        public piatto[] Secondi = new piatto[100];
-        public piatto[] Dessert = new piatto[100];
-        int ca = 0, cpr = 0, cs = 0, cd = 0;
+         piatto[] Antipasti = new piatto[100];
+         piatto[] Primi = new piatto[100];
+         piatto[] Secondi = new piatto[100];
+         piatto[] Dessert = new piatto[100];
+         int ca = 0, cpr = 0, cs = 0, cd = 0;
         public VisualizzaPiatti()
         {
             InitializeComponent();
@@ -27,7 +27,6 @@ namespace RistoranteM
             for(int i = 0; i < aa; i++)
             {
                 listBoxAntipasti.Items.Add(a[i].nome);
-                System.Diagnostics.Debug.WriteLine(a[i].nome);
             }
         }
         public void piattiPrimi(piatto[] pr, int prpr)
@@ -35,7 +34,6 @@ namespace RistoranteM
             for (int i = 0; i < prpr; i++)
             {
                 listBoxPrimi.Items.Add(pr[i].nome);
-                System.Diagnostics.Debug.WriteLine(pr[i].nome);
             }
         }
         public void piattiSecondi(piatto[] s, int ss)
@@ -43,7 +41,6 @@ namespace RistoranteM
             for (int i = 0; i < ss; i++)
             {
                 listBoxSecondi.Items.Add(s[i].nome);
-                System.Diagnostics.Debug.WriteLine(s[i].nome);
             }
         }
         public void piattiDessert(piatto[] d, int dd)
@@ -51,7 +48,6 @@ namespace RistoranteM
             for (int i = 0; i < dd; i++)
             {
                 listBoxDessert.Items.Add(d[i].nome);
-                System.Diagnostics.Debug.WriteLine(d[i].nome);
             }
         }
 

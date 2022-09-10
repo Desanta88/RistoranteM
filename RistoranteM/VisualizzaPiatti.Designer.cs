@@ -30,7 +30,7 @@ namespace RistoranteM
         private void InitializeComponent()
         {
             this.tabAntipasti = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageAntipasti = new System.Windows.Forms.TabPage();
             this.listBoxAntipasti = new System.Windows.Forms.ListBox();
             this.tabPrimi = new System.Windows.Forms.TabPage();
             this.listBoxPrimi = new System.Windows.Forms.ListBox();
@@ -41,7 +41,7 @@ namespace RistoranteM
             this.IndietroVP = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabAntipasti.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPageAntipasti.SuspendLayout();
             this.tabPrimi.SuspendLayout();
             this.tabSecondi.SuspendLayout();
             this.tabDessert.SuspendLayout();
@@ -49,26 +49,26 @@ namespace RistoranteM
             // 
             // tabAntipasti
             // 
-            this.tabAntipasti.Controls.Add(this.tabPage1);
+            this.tabAntipasti.Controls.Add(this.tabPageAntipasti);
             this.tabAntipasti.Controls.Add(this.tabPrimi);
             this.tabAntipasti.Controls.Add(this.tabSecondi);
             this.tabAntipasti.Controls.Add(this.tabDessert);
             this.tabAntipasti.Location = new System.Drawing.Point(39, 102);
             this.tabAntipasti.Name = "tabAntipasti";
             this.tabAntipasti.SelectedIndex = 0;
-            this.tabAntipasti.Size = new System.Drawing.Size(197, 281);
+            this.tabAntipasti.Size = new System.Drawing.Size(201, 281);
             this.tabAntipasti.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPageAntipasti
             // 
-            this.tabPage1.Controls.Add(this.listBoxAntipasti);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(189, 255);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Antipasti";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageAntipasti.Controls.Add(this.listBoxAntipasti);
+            this.tabPageAntipasti.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAntipasti.Name = "tabPageAntipasti";
+            this.tabPageAntipasti.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAntipasti.Size = new System.Drawing.Size(193, 255);
+            this.tabPageAntipasti.TabIndex = 0;
+            this.tabPageAntipasti.Text = "Antipasti";
+            this.tabPageAntipasti.UseVisualStyleBackColor = true;
             // 
             // listBoxAntipasti
             // 
@@ -85,7 +85,7 @@ namespace RistoranteM
             this.tabPrimi.Location = new System.Drawing.Point(4, 22);
             this.tabPrimi.Name = "tabPrimi";
             this.tabPrimi.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrimi.Size = new System.Drawing.Size(189, 255);
+            this.tabPrimi.Size = new System.Drawing.Size(193, 255);
             this.tabPrimi.TabIndex = 1;
             this.tabPrimi.Text = "Primi";
             this.tabPrimi.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@ namespace RistoranteM
             this.tabSecondi.Location = new System.Drawing.Point(4, 22);
             this.tabSecondi.Name = "tabSecondi";
             this.tabSecondi.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSecondi.Size = new System.Drawing.Size(189, 255);
+            this.tabSecondi.Size = new System.Drawing.Size(193, 255);
             this.tabSecondi.TabIndex = 2;
             this.tabSecondi.Text = "Secondi";
             this.tabSecondi.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@ namespace RistoranteM
             this.tabDessert.Location = new System.Drawing.Point(4, 22);
             this.tabDessert.Name = "tabDessert";
             this.tabDessert.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDessert.Size = new System.Drawing.Size(189, 255);
+            this.tabDessert.Size = new System.Drawing.Size(193, 255);
             this.tabDessert.TabIndex = 3;
-            this.tabDessert.Text = "Dessert";
+            this.tabDessert.Text = "Desserts";
             this.tabDessert.UseVisualStyleBackColor = true;
             // 
             // listBoxDessert
@@ -169,7 +169,7 @@ namespace RistoranteM
             this.Text = "VisualizzaPiatti";
             this.Load += new System.EventHandler(this.VisualizzaPiatti_Load);
             this.tabAntipasti.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPageAntipasti.ResumeLayout(false);
             this.tabPrimi.ResumeLayout(false);
             this.tabSecondi.ResumeLayout(false);
             this.tabDessert.ResumeLayout(false);
@@ -180,7 +180,7 @@ namespace RistoranteM
         #endregion
 
         private System.Windows.Forms.TabControl tabAntipasti;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPageAntipasti;
         private System.Windows.Forms.TabPage tabPrimi;
         private System.Windows.Forms.TabPage tabSecondi;
         private System.Windows.Forms.TabPage tabDessert;

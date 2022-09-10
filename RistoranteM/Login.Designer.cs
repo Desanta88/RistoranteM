@@ -143,7 +143,7 @@ namespace RistoranteM
             this.RegistrazioneCliente.Text = "Se ti sei scordato la password o ti devi registrare,clicca sul link";
             this.RegistrazioneCliente.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RegistrazioneCliente_LinkClicked);
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,8 +159,9 @@ namespace RistoranteM
             this.Controls.Add(this.PassP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cliente);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

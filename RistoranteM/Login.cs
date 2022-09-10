@@ -25,28 +25,6 @@ namespace RistoranteM
         public Login()
         {
             InitializeComponent();
-            //ogni volta che si apre il programma legge le informazioni contenuti nei file e li mette in variabili apposite
-            StreamReader sr = new StreamReader(Filename);
-            StreamReader SR = new StreamReader(FILENAME);
-            StreamReader sR = new StreamReader(FILEname);
-            string number, line,line2;
-            int nn = 0;
-            number = sr.ReadLine();
-            nc = int.Parse(number);
-            sr.Close();
-            if (nc != 0)
-            {
-                while (!SR.EndOfStream)
-                {
-                    line = SR.ReadLine();
-                    Clientela[nn] = line;
-                    nn++;
-                }
-            }
-            SR.Close();
-            line2 = sR.ReadLine();
-            PasswordP = line2;
-            sR.Close();
         }
         public int ricerca(string[] c, int n, string pass)
         {
@@ -106,6 +84,32 @@ namespace RistoranteM
         {
             RegCliente cli = new RegCliente();
             cli.ShowDialog();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            //ogni volta che si apre il programma legge le informazioni contenuti nei file e li mette in variabili apposite
+            StreamReader sr = new StreamReader(Filename);
+            StreamReader SR = new StreamReader(FILENAME);
+            StreamReader sR = new StreamReader(FILEname);
+            string number, line, line2;
+            int nn = 0;
+            number = sr.ReadLine();
+            nc = int.Parse(number);
+            sr.Close();
+            if (nc != 0)
+            {
+                while (!SR.EndOfStream)
+                {
+                    line = SR.ReadLine();
+                    Clientela[nn] = line;
+                    nn++;
+                }
+            }
+            SR.Close();
+            line2 = sR.ReadLine();
+            PasswordP = line2;
+            sR.Close();
         }
     }
 }

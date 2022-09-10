@@ -98,7 +98,15 @@ namespace RistoranteM
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            RipristinoPiatto(Proprietario.p, EliminaPiatto.PiattiCancellati, ref Proprietario.n);
+            var ris=MessageBox.Show("sei  sicuro?", "Warning!", MessageBoxButtons.YesNo);
+            if (ris == DialogResult.Yes)
+            {
+                RipristinoPiatto(Proprietario.p, EliminaPiatto.PiattiCancellati, ref Proprietario.n);
+            }
+            else if(ris == DialogResult.No)
+            {
+
+            }
         }
 
         private void listBoxPiattiCanc_SelectedIndexChanged(object sender, EventArgs e)
