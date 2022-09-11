@@ -36,10 +36,24 @@ namespace RistoranteM
             if (count < 1 && TextBoxRegP.Text.Length<=12)
             {
                 PasswordP = TextBoxRegP.Text;
-                TextBoxRegP.Text = "";
                 Login.PasswordP = PasswordP;
                 scrivi(filename, PasswordP);
                 count++;
+            }
+            else if(TextBoxRegP.Text.Length>12)
+            {
+                MessageBox.Show("La password deve essere lunga massimo 12 caratteri!", "Warning!");
+                count = 0;
+            }
+            else if (count >= 1)
+            {
+                MessageBox.Show("Hai già scelto una password,se ne vuoi scegliere un'altra,esci e rientra.", "Warning!");
+                count = 0;
+            }
+            if(TextBoxRegP.Text == "")
+            {
+                MessageBox.Show("Scrivi qualcosa!", "Warning!");
+                count = 0;
             }
            
         }

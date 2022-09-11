@@ -36,10 +36,14 @@ namespace RistoranteM
             this.VisualizzaPiatti = new System.Windows.Forms.Button();
             this.EliminaPiatto = new System.Windows.Forms.Button();
             this.IndietroPiatto = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(801, 47);
@@ -101,9 +105,21 @@ namespace RistoranteM
             this.IndietroPiatto.Name = "IndietroPiatto";
             this.IndietroPiatto.Size = new System.Drawing.Size(90, 29);
             this.IndietroPiatto.TabIndex = 5;
-            this.IndietroPiatto.Text = "< Indietro";
+            this.IndietroPiatto.Text = "Esci";
             this.IndietroPiatto.UseVisualStyleBackColor = true;
             this.IndietroPiatto.Click += new System.EventHandler(this.IndietroPiatto_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(364, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ACCOUNT PROPRIETARIO";
             // 
             // Proprietario
             // 
@@ -117,9 +133,13 @@ namespace RistoranteM
             this.Controls.Add(this.ModificaPiatto);
             this.Controls.Add(this.AggiungiPiatto);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Proprietario";
             this.Text = "AccountProprietario";
             this.Load += new System.EventHandler(this.Proprietario_Load);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -133,5 +153,6 @@ namespace RistoranteM
         private System.Windows.Forms.Button VisualizzaPiatti;
         private System.Windows.Forms.Button EliminaPiatto;
         private System.Windows.Forms.Button IndietroPiatto;
+        private System.Windows.Forms.Label label1;
     }
 }

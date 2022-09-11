@@ -193,6 +193,8 @@ namespace RistoranteM
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonModifica);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ModificaPiatto";
             this.Text = "ModificaPiatto";
             this.ResumeLayout(false);

@@ -15,6 +15,7 @@ namespace RistoranteM
     {
         string filename = @"./ElencoPiatti.csv";
         piatto P;
+        int po;
         public CercaPiatto()
         {
             InitializeComponent();
@@ -40,6 +41,19 @@ namespace RistoranteM
             v.ingrediente3 = piattoC[5];
             v.ingrediente4 = piattoC[6];
             return v;
+        }
+        public int ricerca(piatto[] c, int n, string name)
+        {
+            int pos = -1, m = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (c[i].nome == name)
+                {
+                    pos = m;
+                }
+                m++;
+            }
+            return pos;
         }
         public static string cercaSuFile(string name, string filename, string sep = ";")
         {
@@ -73,24 +87,35 @@ namespace RistoranteM
         {
             Close();
         }
-
+        //mostra il piatto cercato
         private void buttonCercaPiatto_Click(object sender, EventArgs e)
         {
-            P = cerca_Piatto(textBoxPiattoDaCercare.Text, filename);
-            label4.Text = "tipo: " + P.tipo;
-            label4.Visible = true;
-            label5.Text = "nome: " + P.nome;
-            label5.Visible = true;
-            label6.Text = "prezzo: " + P.prezzo.ToString()+" euro";
-            label6.Visible = true;
-            label7.Text = "primo ingrediente: " + P.ingrediente1;
-            label7.Visible = true;
-            label8.Text = "secondo ingrediente: " + P.ingrediente2;
-            label8.Visible = true;
-            label9.Text = "terzo ingrediente: " + P.ingrediente3;
-            label9.Visible = true;
-            label10.Text = "quarto ingrediente: " + P.ingrediente4;
-            label10.Visible = true;
+            po = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoDaCercare.Text);
+            if (po !=-1)
+            {
+                if (textBoxPiattoDaCercare.Text != "")
+                {
+                    P = cerca_Piatto(textBoxPiattoDaCercare.Text, filename);
+                    label4.Text = "tipo: " + P.tipo;
+                    label4.Visible = true;
+                    label5.Text = "nome: " + P.nome;
+                    label5.Visible = true;
+                    label6.Text = "prezzo: " + P.prezzo.ToString() + " euro";
+                    label6.Visible = true;
+                    label7.Text = "primo ingrediente: " + P.ingrediente1;
+                    label7.Visible = true;
+                    label8.Text = "secondo ingrediente: " + P.ingrediente2;
+                    label8.Visible = true;
+                    label9.Text = "terzo ingrediente: " + P.ingrediente3;
+                    label9.Visible = true;
+                    label10.Text = "quarto ingrediente: " + P.ingrediente4;
+                    label10.Visible = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Piatto non trovato", "Warning!");
+            }
         }
     }
 }

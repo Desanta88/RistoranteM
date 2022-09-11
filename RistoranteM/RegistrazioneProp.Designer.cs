@@ -33,12 +33,15 @@ namespace RistoranteM
             this.RegPassP = new System.Windows.Forms.Button();
             this.IndietroP = new System.Windows.Forms.Button();
             this.TextBoxRegP = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(274, 98);
+            this.label1.Location = new System.Drawing.Point(182, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(254, 13);
             this.label1.TabIndex = 1;
@@ -46,7 +49,7 @@ namespace RistoranteM
             // 
             // RegPassP
             // 
-            this.RegPassP.Location = new System.Drawing.Point(362, 199);
+            this.RegPassP.Location = new System.Drawing.Point(257, 193);
             this.RegPassP.Name = "RegPassP";
             this.RegPassP.Size = new System.Drawing.Size(83, 29);
             this.RegPassP.TabIndex = 2;
@@ -56,7 +59,7 @@ namespace RistoranteM
             // 
             // IndietroP
             // 
-            this.IndietroP.Location = new System.Drawing.Point(41, 400);
+            this.IndietroP.Location = new System.Drawing.Point(12, 324);
             this.IndietroP.Name = "IndietroP";
             this.IndietroP.Size = new System.Drawing.Size(101, 29);
             this.IndietroP.TabIndex = 3;
@@ -66,22 +69,47 @@ namespace RistoranteM
             // 
             // TextBoxRegP
             // 
-            this.TextBoxRegP.Location = new System.Drawing.Point(305, 152);
+            this.TextBoxRegP.Location = new System.Drawing.Point(198, 152);
             this.TextBoxRegP.Name = "TextBoxRegP";
             this.TextBoxRegP.Size = new System.Drawing.Size(196, 20);
             this.TextBoxRegP.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(238, 31);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "REGISTRAZIONE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(588, 44);
+            this.panel1.TabIndex = 6;
             // 
             // FormP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(589, 365);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextBoxRegP);
             this.Controls.Add(this.IndietroP);
             this.Controls.Add(this.RegPassP);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(605, 404);
+            this.MinimumSize = new System.Drawing.Size(605, 404);
             this.Name = "FormP";
             this.Text = "RegProprietario";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +120,7 @@ namespace RistoranteM
         private System.Windows.Forms.Button RegPassP;
         private System.Windows.Forms.Button IndietroP;
         private System.Windows.Forms.TextBox TextBoxRegP;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

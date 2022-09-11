@@ -48,7 +48,7 @@ namespace RistoranteM
         //controlla se la password inserita è uguale a quella impostata.Se è giusta,allora fa accedere al menù
         private void Prop_Click(object sender, EventArgs e)
         {
-            if (PasswordP != "")
+            if (PasswordP != "" && PassP.Text!="")
             {
                 if (PassP.Text == PasswordP)
                 {
@@ -56,6 +56,10 @@ namespace RistoranteM
                     p.ShowDialog();
                     PassP.Text = "";
                 }
+            }
+            else if(PassP.Text=="")
+            {
+                MessageBox.Show("Scrivi qualcosa!", "Warning!");
             }
 
         }
@@ -72,10 +76,10 @@ namespace RistoranteM
                     cl.ShowDialog();
                     PassC.Text = "";
                 }
-                else
-                {
-
-                }
+            }
+            else if (PassC.Text == "")
+            {
+                MessageBox.Show("Scrivi qualcosa!", "Warning!");
             }
 
         }

@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace RistoranteM
 {
     public partial class ModificaPiatto : Form
     {
-        int posi;
+        int posi,posizi,count=0;
         public ModificaPiatto()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace RistoranteM
         {
             ScriviAppend(ToString(pi), filename);
         }
+        //cerca il piatto da modificare
         public int ricerca(piatto[] c, int n, string name)
         {
             int pos = -1, m = 0;
@@ -56,8 +58,14 @@ namespace RistoranteM
         {
             Close();
         }
+        //modifica il piatto nell'array
         public void Modifica_Piatto(piatto[]c,int pos)
         {
+            var errorCounter = Regex.Matches(textBoxNuovoPrezzo.Text, @"[a-zA-Z]").Count;
+            if (errorCounter > 1)
+            {
+                throw new Exception("caratteri alfabetici presenti");
+            }
             c[pos].tipo = textBoxNuovoTipo.Text;
             c[pos].nome = textBoxNuovoNome.Text;
             c[pos].prezzo = float.Parse(textBoxNuovoPrezzo.Text);
@@ -81,18 +89,41 @@ namespace RistoranteM
                 File.Delete(percorso);
         }
 
+        //modifica il piatto 
         private void buttonModifica_Click(object sender, EventArgs e)
         {
-            posi = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoDaModificare.Text);
-            Modifica_Piatto(Proprietario.p, posi);
-            ModificaPiattoSulFile(Proprietario.p, Proprietario.n);
-            textBoxNuovoTipo.Text = "";
-            textBoxNuovoNome.Text = "";
-            textBoxNuovoPrezzo.Text = "";
-            textBoxIng1.Text = "";
-            textBoxIng2.Text = "";
-            textBoxIng3.Text = "";
-            textBoxIng4.Text = "";
+            count = 0;
+            posizi = 0;
+            if (textBoxNuovoTipo.Text == "" || textBoxNuovoNome.Text == "" || textBoxNuovoPrezzo.Text == "" || textBoxIng1.Text == ""|| textBoxIng2.Text == ""|| textBoxIng3.Text == "" || textBoxIng4.Text == "")
+            {
+                count++;
+            }
+            posizi = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoDaModificare.Text);
+            if(posizi!=-1)
+            {
+                if (count < 1)
+                {
+                    posi = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoDaModificare.Text);
+                    try
+                    {
+                        Modifica_Piatto(Proprietario.p, posi);
+                        ModificaPiattoSulFile(Proprietario.p, Proprietario.n);
+                    }
+                    catch(Exception E)
+                    {
+                        MessageBox.Show("caratteri non numerici presenti");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Scrivi su tutti gli spazi!", "Warning!");
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Piatto non trovato", "Warning!");
+            }
         }
     }
 }

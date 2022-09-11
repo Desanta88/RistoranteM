@@ -193,6 +193,8 @@ namespace RistoranteM
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCercaPiatto);
             this.Controls.Add(this.IndietroCercaP);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "CercaPiatto";
             this.Text = "CercaPiatto";
             this.Load += new System.EventHandler(this.CercaPiatto_Load);

@@ -171,6 +171,8 @@ namespace RistoranteM
             this.Controls.Add(this.CostoPiatto);
             this.Controls.Add(this.NomePiatto);
             this.Controls.Add(this.TipoPiatto);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "AggiungiPiattoProp";
             this.Text = "AggiungiPiattoProp";
             this.ResumeLayout(false);

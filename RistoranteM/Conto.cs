@@ -20,7 +20,7 @@ namespace RistoranteM
         {
             InitializeComponent();
         }
-
+        // elimina il piatto dall'array dei piatti ordinati
         public void Eliminazione(string[] v, ref int n, int pos)
         {
             for (int r = pos; r < n - 1; r++)
@@ -49,6 +49,7 @@ namespace RistoranteM
             }
         }
 
+        //toglie piatto dal conto
         private void TogliDalConto_Click(object sender, EventArgs e)
         {
                 index = listBoxPiattiConto.SelectedIndex;

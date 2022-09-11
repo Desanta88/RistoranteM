@@ -62,11 +62,25 @@ namespace RistoranteM
                 if (TextBoxRegC.Text != "" && i < c.Length && counter < 1)
                 {
                     c[i] = TextBoxRegC.Text;
-                    TextBoxRegC.Text = "";
                     Login.Clientela[i] = Clienti[i];
                     i++;
                 }
+                else if(counter>=1)
+                {
+                    MessageBox.Show("Hai già scelto una password,se ne vuoi scegliere un'altra,esci e rientra.", "Warning!");
+                    counter = 0;
+                }
                 counter++;
+            }
+            else if (TextBoxRegC.Text.Length >12)
+            {
+                MessageBox.Show("La password deve essere lunga massimo 12 caratteri!", "Warning!");
+                counter = 0;
+            }
+            if (TextBoxRegC.Text == "")
+            {
+                MessageBox.Show("Scrivi qualcosa!", "Warning!");
+                counter = 0;
             }
             
         }

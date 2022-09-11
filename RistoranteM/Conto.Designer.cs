@@ -36,7 +36,9 @@ namespace RistoranteM
             this.IndietroRecupero = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelContoTot = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxPiattiConto
@@ -74,6 +76,8 @@ namespace RistoranteM
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(221, 31);
@@ -89,6 +93,17 @@ namespace RistoranteM
             this.labelContoTot.TabIndex = 6;
             this.labelContoTot.Text = "label1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CONTO";
+            // 
             // Conto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,10 +113,14 @@ namespace RistoranteM
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.IndietroRecupero);
             this.Controls.Add(this.listBoxPiattiConto);
+            this.MaximumSize = new System.Drawing.Size(237, 436);
+            this.MinimumSize = new System.Drawing.Size(237, 436);
             this.Name = "Conto";
             this.Text = "Conto";
             this.Load += new System.EventHandler(this.Conto_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +134,6 @@ namespace RistoranteM
         private System.Windows.Forms.Label labelContoTot;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem TogliDalConto;
+        private System.Windows.Forms.Label label1;
     }
 }

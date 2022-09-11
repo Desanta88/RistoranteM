@@ -19,6 +19,8 @@ namespace RistoranteM
         {
             InitializeComponent();
         }
+
+        //scrive nel file
         public static void ScriviAppend(string content, string filename)
         {
             var oStream = new FileStream(filename, FileMode.Append, FileAccess.Write, FileShare.Read);
@@ -30,6 +32,7 @@ namespace RistoranteM
         {
             return pi.tipo + sep + pi.nome + sep + pi.prezzo + sep + pi.ingrediente1 + sep + pi.ingrediente2 + sep + pi.ingrediente3 + sep + pi.ingrediente4;
         }
+        //aggiunge una riga nel file
         public void AggiungiSulFile(piatto pi, string filename)
         {
             ScriviAppend(ToString(pi), filename);
@@ -54,6 +57,7 @@ namespace RistoranteM
             sw.WriteLine(content);
             sw.Close();
         }
+        //elimina un piatto dall'array
         public void Eliminazione(piatto[] v, ref int n, int pos)
         {
             for (int r = pos; r < n - 1; r++)
@@ -95,7 +99,7 @@ namespace RistoranteM
                 AggiungiSulFile(EliminaPiatto.PiattiCancellati[PCcounter], filename);
             }
         }
-
+        //l'opzione per recuperare il piatto
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var ris=MessageBox.Show("sei  sicuro?", "Warning!", MessageBoxButtons.YesNo);

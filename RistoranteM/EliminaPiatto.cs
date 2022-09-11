@@ -14,7 +14,7 @@ namespace RistoranteM
 {
     public partial class EliminaPiatto : Form
     {
-        public int posi;
+        public int posi,posiz;
         public static int pc = 0;
         public static piatto[] PiattiCancellati = new piatto[100];
         public string Filename = @"./numeroPiatti.txt";
@@ -78,6 +78,7 @@ namespace RistoranteM
         {
             return FromString(cercaSuFile(name, filename));
         }
+        //cerca il piatto eliminato
         public int ricerca(piatto[] c, int n, string name)
         {
             int pos = -1, m = 0;
@@ -91,6 +92,7 @@ namespace RistoranteM
             }
             return pos;
         }
+        //elimina il piatto eliminato.Per la ricompattazione del file
         public void Eliminazione(piatto[] c, ref int i, int pos)
         {
             int cont=0,app=0,m=0;
@@ -213,16 +215,24 @@ namespace RistoranteM
             rpp.ShowDialog();
         }
 
+        //cancella il piatto con eliminazione logica
         private void CancellaPiatto_Click(object sender, EventArgs e)
         {
-            if (textBoxPiattoCancella.Text != "")
+            posiz = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoCancella.Text);
+            if (posiz != -1)
             {
-                posi = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoCancella.Text);
-                PiattiCancellati[pc] = Proprietario.p[posi];
-                pc++;
-                EliminazioneLogica(Proprietario.p, Proprietario.n, posi);
-                EliminaSulFile(Proprietario.p, Proprietario.n, posi);
-                textBoxPiattoCancella.Text = "";
+                if (textBoxPiattoCancella.Text != "")
+                {
+                    posi = ricerca(Proprietario.p, Proprietario.n, textBoxPiattoCancella.Text);
+                    PiattiCancellati[pc] = Proprietario.p[posi];
+                    pc++;
+                    EliminazioneLogica(Proprietario.p, Proprietario.n, posi);
+                    EliminaSulFile(Proprietario.p, Proprietario.n, posi);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Piatto non trovato", "Warning!");
             }
         }
     }

@@ -36,6 +36,7 @@ namespace RistoranteM
             v.ingrediente4 = "";
             //dalla stringa deve ritornare la variabile Voto v settata con  i valori
             piattoC = piattoStringa.Split(';');
+            Console.WriteLine(piattoC[0]);
             v.tipo = piattoC[0];
             v.nome = piattoC[1];
             v.prezzo = float.Parse(piattoC[2]);
@@ -96,8 +97,11 @@ namespace RistoranteM
                 while (!sr.EndOfStream)
                 {
                     line = sr.ReadLine();
-                    p[ii] = FromString(line, ";");
-                    ii++;
+                    if (line!="")
+                    {
+                        p[ii] = FromString(line, ";");
+                        ii++;
+                    }
                 }
                 sr.Close();
                 n = s;

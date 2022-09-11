@@ -22,6 +22,7 @@ namespace RistoranteM
             InitializeComponent();
             
         }
+        //aggiunge i piatti nelle varie tab
         public void piattiAntipasti(piatto[] a,int aa)
         {
             for(int i = 0; i < aa; i++)
@@ -59,26 +60,27 @@ namespace RistoranteM
             piattiSecondi(Secondi, cs);
             piattiDessert(Dessert, cd);
         }
+        //ordina i piatti negli array specifici
         public void OrdinamentoPiatti(piatto[] c,piatto[] a,piatto[] pr,piatto[] s,piatto[] d,int i,ref int aa,ref int prpr,ref int ss,ref int dd)
         {
             for(int f = 0; f < i; f++)
             {
-                if (c[f].tipo == "Antipasto")
+                if (c[f].tipo == "Antipasto" ||  c[f].tipo == "antipasto" || c[f].tipo == "antipasti" || c[f].tipo == "Antipasti")
                 {
                     a[ca] = c[f];
                     aa++;
                 }
-                else if(c[f].tipo == "Primo")
+                else if(c[f].tipo == "Primo"|| c[f].tipo == "primo" || c[f].tipo == "Primi" || c[f].tipo == "primi")
                 {
                     pr[cpr] = c[f];
                     prpr++;
                 }
-                else if (c[f].tipo == "Secondo")
+                else if (c[f].tipo == "Secondo"|| c[f].tipo == "secondo" || c[f].tipo == "Secondi" || c[f].tipo == "secondi")
                 {
                     s[cs] = c[f];
                     ss++;
                 }
-                else if (c[f].tipo == "Dessert")
+                else if (c[f].tipo == "Dessert"||c[f].tipo == "dessert"||c[f].tipo == "Desserts"|| c[f].tipo == "desserts")
                 {
                     d[cd] = c[f];
                     dd++;

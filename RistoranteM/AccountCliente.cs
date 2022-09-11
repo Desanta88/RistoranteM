@@ -31,6 +31,7 @@ namespace RistoranteM
         int poA, poP, poS, poD;
         public static bool PiattiO=false;
 
+        //apre la guida
         private void GuidaOrdinePiatti_Click(object sender, EventArgs e)
         {
             GuidaPerOrdinarePiatti G = new GuidaPerOrdinarePiatti();
@@ -41,6 +42,7 @@ namespace RistoranteM
         {
             InitializeComponent();
         }
+        //aggiunge i piatti considerati antipasti nella listview dedicata ad essi
         public void piattiAntipasti(piatto[] a,int aa)
         {
             for (int i = 0; i < aa; i++)
@@ -50,6 +52,7 @@ namespace RistoranteM
                 listViewAntipasti.Items.Add(A);
             }
         }
+        //aggiunge i piatti considerati primi nella listview dedicata ad essi
         public void piattiPrimi(piatto[] pr, int prpr)
         {
             for (int i = 0; i < prpr; i++)
@@ -59,6 +62,7 @@ namespace RistoranteM
                 listViewPrimi.Items.Add(P);
             }
         }
+        //aggiunge i piatti considerati secondi nella listview dedicata ad essi
         public void piattiSecondi(piatto[] s, int ss)
         {
             for (int i = 0; i < ss; i++)
@@ -68,6 +72,18 @@ namespace RistoranteM
                 listViewSecondi.Items.Add(S);
             }
         }
+
+        //aggiunge i piatti considerati dessert nella listview dedicata ad essi
+        public void piattiDessert(piatto[] d, int dd)
+        {
+            for (int i = 0; i < dd; i++)
+            {
+                ListViewItem D = new ListViewItem(d[i].nome);
+                D.SubItems.Add(d[i].prezzo.ToString());
+                listViewDesserts.Items.Add(D);
+            }
+        }
+        //mette il piatto scelto nel conto
         private void listviewConto(int Aop,int Pop,int Sop,int Dop,string piaorA,string piaorP,string piaorS,string piaorD,string[] PiaOr,ref int NPO,piatto[]Po,ref int NPOS)
         {
             Aop = listViewAntipasti.SelectedItems.Count;
@@ -129,7 +145,7 @@ namespace RistoranteM
             }
 
         }
-
+        // mostra gli ingredienti del piatto scelto 
         public void VisualizzaIngredienti(int Aop, int Pop, int Sop, int Dop, string piaorA, string piaorP, string piaorS, string piaorD)
         {
             Aop = listViewAntipasti.SelectedItems.Count;
@@ -191,6 +207,7 @@ namespace RistoranteM
             con.ShowDialog();
         }
 
+        //fa apparire una messagebox che fa sapere all'utente che i piatti sono stati ordinati
         private void ordinaPiatti_Click(object sender, EventArgs e)
         {
             if (conto != 0)
@@ -206,42 +223,34 @@ namespace RistoranteM
                 MessageBox.Show("Non hai ordinato nessun piatto!");
             }
         }
-
-        public void piattiDessert(piatto[] d, int dd)
-        {
-            for (int i = 0; i < dd; i++)
-            {
-                ListViewItem D = new ListViewItem(d[i].nome);
-                D.SubItems.Add(d[i].prezzo.ToString());
-                listViewDesserts.Items.Add(D);
-            }
-        }
+        //ordina tutti i piatti presenti nel programma nei 4 array rispettivi
         public void OrdinamentoPiatti(piatto[] c, piatto[] a, piatto[] pr, piatto[] s, piatto[] d, int i, ref int aa, ref int prpr, ref int ss, ref int dd)
         {
             for (int f = 0; f < i; f++)
             {
-                if (c[f].tipo == "Antipasto")
+                if (c[f].tipo == "Antipasto" || c[f].tipo == "antipasto" || c[f].tipo == "antipasti" || c[f].tipo == "Antipasti")
                 {
                     a[ca] = c[f];
                     aa++;
                 }
-                else if (c[f].tipo == "Primo")
+                else if (c[f].tipo == "Primo" || c[f].tipo == "primo" || c[f].tipo == "Primi" || c[f].tipo == "primi")
                 {
                     pr[cpr] = c[f];
                     prpr++;
                 }
-                else if (c[f].tipo == "Secondo")
+                else if (c[f].tipo == "Secondo" || c[f].tipo == "secondo" || c[f].tipo == "Secondi" || c[f].tipo == "secondi")
                 {
                     s[cs] = c[f];
                     ss++;
                 }
-                else if (c[f].tipo == "Dessert")
+                else if (c[f].tipo == "Dessert" || c[f].tipo == "dessert" || c[f].tipo == "Desserts" || c[f].tipo == "desserts")
                 {
                     d[cd] = c[f];
                     dd++;
                 }
             }
         }
+        //prende una riga dal file e la mette in una variabile di tipo piatto
         public static piatto FromString(string piattoStringa, string sep = ";")
         {
             piatto v;

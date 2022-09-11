@@ -54,11 +54,15 @@ namespace RistoranteM
             this.nomePrimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.costoPrimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewPrimi = new System.Windows.Forms.ListView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.contextMenuStripIng.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(867, 42);
@@ -77,6 +81,8 @@ namespace RistoranteM
             // PrezzoTotale
             // 
             this.PrezzoTotale.Location = new System.Drawing.Point(315, 400);
+            this.PrezzoTotale.MaximumSize = new System.Drawing.Size(102, 42);
+            this.PrezzoTotale.MinimumSize = new System.Drawing.Size(102, 42);
             this.PrezzoTotale.Name = "PrezzoTotale";
             this.PrezzoTotale.Size = new System.Drawing.Size(102, 42);
             this.PrezzoTotale.TabIndex = 2;
@@ -266,6 +272,17 @@ namespace RistoranteM
             this.listViewPrimi.UseCompatibleStateImageBehavior = false;
             this.listViewPrimi.View = System.Windows.Forms.View.Details;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(273, 31);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "ACCOUNT CLIENTE";
+            // 
             // cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,9 +301,13 @@ namespace RistoranteM
             this.Controls.Add(this.PrezzoTotale);
             this.Controls.Add(this.ordinaPiatti);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(884, 489);
+            this.MinimumSize = new System.Drawing.Size(884, 489);
             this.Name = "cliente";
             this.Text = "AccountCliente";
             this.Load += new System.EventHandler(this.cliente_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.contextMenuStripIng.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -318,5 +339,6 @@ namespace RistoranteM
         private System.Windows.Forms.ColumnHeader costoPrimi;
         private System.Windows.Forms.ListView listViewPrimi;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Label label5;
     }
 }
